@@ -4,7 +4,7 @@ const Posts = require("./posts-model");
 
 const router = express.Router();
 
-const { valdiatePostId, validatePost } = require("../middleware/middleware");
+const { validatePostId, validatePost } = require("../middleware/middleware");
 
 router.get('/', (req, res, next) => {
   Posts.get()
@@ -14,7 +14,7 @@ router.get('/', (req, res, next) => {
     .catch(next)
 });
 
-router.get('/:id', valdiatePostId, (req, res) => {
+router.get('/:id', validatePostId, (req, res) => {
   res.status(200).json(req.post);
 });
 

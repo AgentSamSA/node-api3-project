@@ -4,7 +4,8 @@ const Posts = require("../posts/posts-model");
 function logger(req, res, next) {
   console.log(req.method);
   console.log(req.url);
-  console.log(Date.toISOString());
+  var date = new Date();
+  console.log(date.toISOString());
   next();
 }
 
