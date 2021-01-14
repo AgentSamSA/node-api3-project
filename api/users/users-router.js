@@ -48,7 +48,7 @@ router.post('/:id/posts', validateUserId, validatePost, (req, res, next) => {
 
   Posts.insert(postInfo)
     .then(post => {
-      res.status(210).json(post);
+      res.status(201).json(post);
     })
     .catch(next);
 });
